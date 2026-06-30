@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO METADATA -->
+    <meta name="description" content="Professional Portfolio Website of Pankaj Saini - Student & Web Developer. Showcase of projects, technical skills, education timeline, and contact information.">
+    <title>Pankaj Saini | Student & Web Developer Portfolio</title>
+    
+    <!-- EXTERNAL CDNs -->
+    <!-- Google Fonts: Outfit (modern geometric headings) & Plus Jakarta Sans (clean, readable body copy) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons for vector-based, crisp UI iconography -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- Custom CSS File Link with cache buster -->
+    <link rel="stylesheet" href="style.css?v=1.4">
+</head>
+<body>
+
+    <!-- =========================================================================
+         1. HEADER & NAVIGATION SECTION
+         Contains the brand logo, navigation links, theme toggle, and mobile menu
+         ========================================================================= -->
+    <header class="header" id="header">
+        <nav class="navbar container">
+            <!-- Brand Identity / Logo -->
+            <a href="#home" class="logo">
+                <span class="logo-text">Pankaj</span><span class="logo-dot">.</span>
+            </a>
+
+            <!-- Navigation Links Container -->
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#education" class="nav-link">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#skills" class="nav-link">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#projects" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Action Controls: Light/Dark Mode Switcher & Responsive Menu Toggle -->
+            <div class="nav-controls">
+                <!-- Theme Switcher Button -->
+                <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle Light/Dark Theme">
+                    <i class="fa-regular fa-moon" id="theme-icon"></i>
+                </button>
+                
+                <!-- Responsive Hamburger Menu Icon (Toggled via JS) -->
+                <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation Menu">
+                    <span class="hamburger-line line-1"></span>
+                    <span class="hamburger-line line-2"></span>
+                    <span class="hamburger-line line-3"></span>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Interactive scroll indicator line at top of navigation -->
+        <div class="scroll-progress-line" id="scroll-progress-line"></div>
+    </header>
+
+    <main class="main-content">
+        <!-- =========================================================================
+             2. HERO / INTRODUCTION SECTION
+             First section users see, containing name, dynamic text loop, and buttons
+             ========================================================================= -->
+        <section class="hero-section section" id="home">
+            <!-- Dynamic Background Shapes (Animated via CSS) -->
+            <div class="bg-shape shape-1"></div>
+            <div class="bg-shape shape-2"></div>
+            <div class="bg-shape shape-3"></div>
+
+            <div class="hero-container container grid">
+                <!-- Textual Content & Calls to Action -->
+                <div class="hero-content reveal-left">
+                    <span class="hero-subtitle">Welcome to my Portfolio</span>
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="gradient-text text-glow">Pankaj Saini</span>
+                    </h1>
+                    <!-- Typing Loop Target Elements (Controlled in script.js) -->
+                    <h2 class="hero-role-wrapper">
+                        I am a <span class="typing-text" id="typing-text"></span><span class="typing-cursor">|</span>
+                    </h2>
+                    <p class="hero-description">
+                        An ambitious programmer and developer looking to craft elegant, responsive, and high-performance digital experiences. Welcome to my web space!
+                    </p>
+                    
+                    <!-- Call To Action Button Group -->
+                    <div class="hero-buttons">
+                        <!-- Links to user's Google Drive Resume folder -->
+                        <a href="https://drive.google.com/drive/folders/1W5_3s-2W9U5G0TXa3rbrlCfO_vP7wF6S" target="_blank" rel="noopener" class="btn btn-primary">
+                            <span class="btn-text">View Resume</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span class="btn-text">Contact Me</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Professional Photo Container with Custom Gradient Frames -->
+                <div class="hero-image-wrapper reveal-right">
+                    <div class="profile-image-container">
+                        <div class="profile-glow-ring"></div>
+                        <img src="assets/images/profile.jpg" alt="Pankaj Saini Headshot" class="profile-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================================
+             3. ABOUT ME SECTION
+             Presents personal introduction, status cards, and hobbies
+             ========================================================================= -->
+        <section class="about-section section" id="about">
+            <div class="container">
+                <!-- Section Title Headers -->
+                <div class="section-header reveal-up">
+                    <span class="section-subtitle">Get To Know Me</span>
+                    <h2 class="section-title">About Me</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="about-grid grid">
+                    <!-- Textual Content & Career Goals -->
+                    <div class="about-text-content reveal-left">
+                        <h3 class="about-heading">My Mission & Objectives</h3>
+                        <p class="about-description">
+                            I am a motivated computer applications student and passionate self-taught frontend developer. I thrive at the intersection of coding and design, developing responsive layouts that adapt perfectly to any screen size.
+                        </p>
+                        <p class="about-description">
+                            <strong>Career Objective:</strong> To secure a challenging position as a Web Developer where I can apply my proficiency in HTML, CSS, JavaScript, and modern responsive design patterns to contribute to high-impact web assets and expand my software engineering capabilities.
+                        </p>
+                        
+                        <!-- Quick Hobbies Badges Grid -->
+                        <div class="hobbies-wrapper">
+                            <h4 class="sub-heading">Interests & Hobbies</h4>
+                            <div class="hobbies-grid">
+                                <span class="hobby-badge"><i class="fa-solid fa-code"></i> Coding Problems</span>
+                                <span class="hobby-badge"><i class="fa-solid fa-book-open"></i> Technical Reading</span>
+                                <span class="hobby-badge"><i class="fa-solid fa-gamepad"></i> Gaming</span>
+                                <span class="hobby-badge"><i class="fa-solid fa-camera"></i> Photography</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Glassmorphism Stats & Details Cards -->
+                    <div class="about-cards-wrapper reveal-right">
+                        <div class="about-cards-grid grid">
+                            <!-- Card 1: Experience/Education Level -->
+                            <div class="about-card glass-card">
+                                <div class="about-card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                                <h4 class="about-card-title">Education</h4>
+                                <p class="about-card-desc">BCA Student</p>
+                            </div>
+                            
+                            <!-- Card 2: Location -->
+                            <div class="about-card glass-card">
+                                <div class="about-card-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                                <h4 class="about-card-title">Location</h4>
+                                <p class="about-card-desc">Jhajjar, Haryana, 124103</p>
+                            </div>
+
+                            <!-- Card 3: Availability -->
+                            <div class="about-card glass-card">
+                                <div class="about-card-icon"><i class="fa-solid fa-briefcase"></i></div>
+                                <h4 class="about-card-title">Availability</h4>
+                                <p class="about-card-desc">Open to Internships</p>
+                            </div>
+
+                            <!-- Card 4: Email Info -->
+                            <div class="about-card glass-card">
+                                <div class="about-card-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <h4 class="about-card-title">Email Contact</h4>
+                                <p class="about-card-desc" style="word-break: break-all;">pankajsaini9416@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================================
+             4. EDUCATION SECTION
+             Presents academic timeline vertically on desktop and single column on mobile
+             ========================================================================= -->
+        <section class="education-section section" id="education">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <span class="section-subtitle">Academic Milestones</span>
+                    <h2 class="section-title">Education History</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <!-- Education Slider Wrapper -->
+                <div class="education-slider-container">
+                    <div class="timeline-container" id="education-slider">
+                        <div class="timeline-line"></div>
+                        
+                        <!-- Timeline Item 1: Undergraduate Degree (Current) -->
+                        <div class="timeline-item reveal-left">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content glass-card">
+                                <span class="timeline-year">2024 - Present</span>
+                                <h3 class="timeline-title">Bachelor of Computer Applications (BCA)</h3>
+                                <h4 class="timeline-institution">State Technical University</h4>
+                                <p class="timeline-desc">Specializing in Software Development and Web Technologies. Developing core competencies in Algorithms, Object-Oriented Programming, and Web Engineering.</p>
+                                <span class="timeline-grade"><i class="fa-solid fa-star"></i> CGPA: 8.9 / 10.0 (Current)</span>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 2: Higher Secondary School -->
+                        <div class="timeline-item timeline-item-right reveal-right">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content glass-card">
+                                <span class="timeline-year">2022 - 2024</span>
+                                <h3 class="timeline-title">Higher Secondary School (Grade 12)</h3>
+                                <h4 class="timeline-institution">Modern Public Senior Secondary School</h4>
+                                <p class="timeline-desc">Completed High School with Science and Mathematics stream. Participated in programming events and math olympiads.</p>
+                                <span class="timeline-grade"><i class="fa-solid fa-check-double"></i> Percentage: 92.4%</span>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 3: Secondary School -->
+                        <div class="timeline-item reveal-left">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content glass-card">
+                                <span class="timeline-year">2020 - 2022</span>
+                                <h3 class="timeline-title">Secondary School (Grade 10)</h3>
+                                <h4 class="timeline-institution">St. Xavier Collegiate High School</h4>
+                                <p class="timeline-desc">Excelled in Computer Applications, Science, and Mathematics. Honored with Outstanding Student Merit Award.</p>
+                                <span class="timeline-grade"><i class="fa-solid fa-check-double"></i> CGPA: 9.2 / 10.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slider Dots Indicator -->
+                    <div class="slider-dots" id="education-dots">
+                        <span class="dot active-dot" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================================
+             5. SKILLS SECTION
+             Displays Technical and Soft skills lists with interactive progress bars
+             ========================================================================= -->
+        <section class="skills-section section" id="skills">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <span class="section-subtitle">Proficiency Levels</span>
+                    <h2 class="section-title">My Skillset</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="skills-slider-container">
+                    <div class="skills-grid grid" id="skills-slider">
+                        <!-- Column 1: Technical Capabilities -->
+                        <div class="skills-box glass-card reveal-left">
+                            <h3 class="skills-category-title"><i class="fa-solid fa-laptop-code"></i> Technical Skills</h3>
+                            <div class="skills-list">
+                                
+                                <!-- Skill Item: HTML -->
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">HTML5</span>
+                                        <span class="skill-percentage">95%</span>
+                                    </div>
+                                    <div class="skill-bar-bg">
+                                        <!-- Width is controlled and animated dynamically via script.js -->
+                                        <div class="skill-bar-fill fill-html" data-width="95%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Skill Item: CSS -->
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">CSS3 & Layouts (Grid/Flex)</span>
+                                        <span class="skill-percentage">90%</span>
+                                    </div>
+                                    <div class="skill-bar-bg">
+                                        <div class="skill-bar-fill fill-css" data-width="90%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Skill Item: JavaScript -->
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">JavaScript (ES6+)</span>
+                                        <span class="skill-percentage">85%</span>
+                                    </div>
+                                    <div class="skill-bar-bg">
+                                        <div class="skill-bar-fill fill-js" data-width="85%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Skill Item: Git -->
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Git Version Control</span>
+                                        <span class="skill-percentage">80%</span>
+                                    </div>
+                                    <div class="skill-bar-bg">
+                                        <div class="skill-bar-fill fill-git" data-width="80%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Skill Item: GitHub -->
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">GitHub Collaboration</span>
+                                        <span class="skill-percentage">82%</span>
+                                    </div>
+                                    <div class="skill-bar-bg">
+                                        <div class="skill-bar-fill fill-github" data-width="82%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Skill Item: Responsive Design -->
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Responsive Design</span>
+                                        <span class="skill-percentage">92%</span>
+                                    </div>
+                                    <div class="skill-bar-bg">
+                                        <div class="skill-bar-fill fill-responsive" data-width="92%"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Column 2: Soft Skills & Qualities -->
+                        <div class="skills-box glass-card reveal-right">
+                            <h3 class="skills-category-title"><i class="fa-solid fa-users"></i> Soft Skills</h3>
+                            <div class="skills-list">
+
+                                <!-- Skill Item: Communication -->
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Communication</span>
+                                        <span class="skill-percentage">88%</span>
+                                    </div>
+                                    <div class="skill-bar-bg">
+                                        <div class="skill-bar-fill fill-communication" data-width="88%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Skill Item: Leadership -->
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Leadership</span>
+                                        <span class="skill-percentage">80%</span>
+                                    </div>
+                                    <div class="skill-bar-bg">
+                                        <div class="skill-bar-fill fill-leadership" data-width="80%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Skill Item: Teamwork -->
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Teamwork & Collaboration</span>
+                                        <span class="skill-percentage">90%</span>
+                                    </div>
+                                    <div class="skill-bar-bg">
+                                        <div class="skill-bar-fill fill-teamwork" data-width="90%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Skill Item: Problem Solving -->
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Problem Solving</span>
+                                        <span class="skill-percentage">86%</span>
+                                    </div>
+                                    <div class="skill-bar-bg">
+                                        <div class="skill-bar-fill fill-problemsolving" data-width="86%"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slider Dots Indicator -->
+                    <div class="slider-dots" id="skills-dots">
+                        <span class="dot active-dot" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================================
+             6. PROJECTS SECTION
+             Responsive grid presenting project cards with overlays and details
+             ========================================================================= -->
+        <section class="projects-section section" id="projects">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <span class="section-subtitle">My Recent Work</span>
+                    <h2 class="section-title">Projects Showcase</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="projects-slider-container">
+                    <div class="projects-grid grid" id="projects-slider">
+                        
+                        <!-- Project Card 1: VZN Architect -->
+                        <article class="project-card glass-card reveal-up">
+                            <div class="project-img-wrapper">
+                                <img src="assets/images/project-vzn.png" alt="VZN Architect Mockup" class="project-img">
+                                <div class="project-overlay">
+                                    <p class="project-overlay-text">A professional architectural showcase website presenting premium building concepts, structural designs, and projects.</p>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-card-title">VZN Architect</h3>
+                                <p class="project-card-description">
+                                    A modern website highlighting architecture portfolios, residential structures, and blueprints with a sleek design. Features interactive slider components.
+                                </p>
+                                <!-- Language/Tech Badges -->
+                                <div class="project-tags">
+                                    <span class="tag">React.js</span>
+                                    <span class="tag">Node.js</span>
+                                    <span class="tag">Render Deploy</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://vznarchitect.onrender.com/" target="_blank" rel="noopener" class="btn btn-icon btn-solid" style="width: 100%;" aria-label="View VZN Architect Live Demo">
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Project Card 2: Clutchground Games -->
+                        <article class="project-card glass-card reveal-up" style="animation-delay: 0.1s;">
+                            <div class="project-img-wrapper">
+                                <img src="assets/images/project-clutchground.png" alt="Clutchground Games Mockup" class="project-img">
+                                <div class="project-overlay">
+                                    <p class="project-overlay-text">A premium web portal for a gaming community, featuring active game logs, tournaments, and social networking.</p>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-card-title">Clutchground Games</h3>
+                                <p class="project-card-description">
+                                    A high-performance web asset designed for gamers, integrating game catalog lists, community event grids, and active forums with rich styling.
+                                </p>
+                                <div class="project-tags">
+                                    <span class="tag">React.js</span>
+                                    <span class="tag">Node.js</span>
+                                    <span class="tag">Web Sockets</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://clutchground.games" target="_blank" rel="noopener" class="btn btn-icon btn-solid" style="width: 100%;" aria-label="View Clutchground Games Live Demo">
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                    <!-- Slider Dots Indicator -->
+                    <div class="slider-dots" id="projects-dots">
+                        <span class="dot active-dot" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================================
+             7. CONTACT SECTION
+             Provides professional contact form with JavaScript validations and notifications
+             ========================================================================= -->
+        <section class="contact-section section" id="contact">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <span class="section-subtitle">Get In Touch</span>
+                    <h2 class="section-title">Contact Me</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <!-- Contact Tabs Toggle -->
+                <div class="contact-tabs">
+                    <button type="button" class="contact-tab-btn active-tab" data-target="details">
+                        <i class="fa-solid fa-address-card"></i> Pankaj's Details
+                    </button>
+                    <button type="button" class="contact-tab-btn" data-target="form">
+                        <i class="fa-regular fa-envelope"></i> Contact Form
+                    </button>
+                </div>
+
+                <div class="contact-container grid">
+                    <!-- Left: Contact Details Cards -->
+                    <div class="contact-info-panel reveal-left active-panel" id="contact-details-panel">
+                        <h3 class="contact-box-title">Let's Connect</h3>
+                        <p class="contact-box-desc">
+                            Feel free to reach out to me for internship positions, project collaborations, or just a quick programming chat!
+                        </p>
+                        
+                        <div class="contact-details-list">
+                            <!-- Email Detail -->
+                            <div class="contact-detail-item">
+                                <div class="detail-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="detail-text">
+                                    <h4>Email Address</h4>
+                                    <a href="mailto:pankajsaini9416@gmail.com">pankajsaini9416@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <!-- Phone Detail -->
+                            <div class="contact-detail-item">
+                                <div class="detail-icon"><i class="fa-solid fa-phone"></i></div>
+                                <div class="detail-text">
+                                    <h4>Phone Number</h4>
+                                    <a href="tel:+919466555518">+91 94665 55518</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Location Detail -->
+                            <div class="contact-detail-item">
+                                <div class="detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="detail-text">
+                                    <h4>Location</h4>
+                                    <span>Jhajjar, Haryana, 124103</span>
+                                </div>
+                            </div>
+
+                            <!-- Work Hours Detail -->
+                            <div class="contact-detail-item">
+                                <div class="detail-icon"><i class="fa-solid fa-clock"></i></div>
+                                <div class="detail-text">
+                                    <h4>Response Time</h4>
+                                    <span>Typically within 24 hours</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Responsive Action Form -->
+                    <div class="contact-form-panel glass-card reveal-right" id="contact-form-panel">
+                        <form action="#" method="POST" class="contact-form" id="contact-form" novalidate>
+                            
+                            <!-- Name Field -->
+                            <div class="form-group">
+                                <label for="form-name" class="form-label">Full Name</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-regular fa-user input-icon"></i>
+                                    <input type="text" id="form-name" name="name" class="form-input" placeholder="John Doe" required>
+                                </div>
+                                <span class="form-error-msg" id="name-error">Please enter your name (minimum 2 characters).</span>
+                            </div>
+
+                            <!-- Email Field -->
+                            <div class="form-group">
+                                <label for="form-email" class="form-label">Email Address</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-regular fa-envelope input-icon"></i>
+                                    <input type="email" id="form-email" name="email" class="form-input" placeholder="john@example.com" required>
+                                </div>
+                                <span class="form-error-msg" id="email-error">Please enter a valid email address.</span>
+                            </div>
+
+                            <!-- Subject Field -->
+                            <div class="form-group">
+                                <label for="form-subject" class="form-label">Subject</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-circle-info input-icon"></i>
+                                    <input type="text" id="form-subject" name="subject" class="form-input" placeholder="Collaboration Inquiry" required>
+                                </div>
+                                <span class="form-error-msg" id="subject-error">Subject line must be at least 4 characters long.</span>
+                            </div>
+
+                            <!-- Message Field -->
+                            <div class="form-group">
+                                <label for="form-message" class="form-label">Your Message</label>
+                                <div class="input-wrapper input-textarea-wrapper">
+                                    <i class="fa-regular fa-message input-icon textarea-icon"></i>
+                                    <textarea id="form-message" name="message" class="form-input form-textarea" placeholder="Describe your project or inquiry..." rows="5" required></textarea>
+                                </div>
+                                <span class="form-error-msg" id="message-error">Your message should be at least 15 characters long.</span>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
+                                <span class="btn-text" id="submit-btn-text">Send Message</span>
+                                <i class="fa-regular fa-paper-plane" id="submit-btn-icon"></i>
+                            </button>
+                        </form>
+                        
+                        <!-- Success Banner (Animated and toggled via script.js) -->
+                        <div class="form-success-banner" id="form-success-banner">
+                            <div class="success-icon-wrapper">
+                                <i class="fa-solid fa-circle-check"></i>
+                            </div>
+                            <h4 class="success-title">Message Transmitted!</h4>
+                            <p class="success-desc">Thank you. I have received your message and will respond shortly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =========================================================================
+         8. FOOTER SECTION
+         Contains copyright labels, social networking link list, and floating back-to-top button
+         ========================================================================= -->
+    <footer class="footer">
+        <div class="footer-container container">
+            <!-- Brand section inside footer -->
+            <div class="footer-brand">
+                <a href="#home" class="logo">
+                    <span class="logo-text">Pankaj</span><span class="logo-dot">.</span>
+                </a>
+                <p class="footer-tagline">Building clean, premium, and performant web experiences.</p>
+            </div>
+
+            <!-- Footer Contact Links (Phone and Gmail only) -->
+            <div class="footer-socials">
+                <a href="tel:+919466555518" class="social-link" aria-label="Phone Pankaj">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+                <a href="mailto:pankajsaini9416@gmail.com" class="social-link" aria-label="Email Pankaj">
+                    <i class="fa-regular fa-envelope"></i>
+                </a>
+            </div>
+
+            <!-- Horizontal divider line -->
+            <div class="footer-divider"></div>
+
+            <!-- Copyright and legal -->
+            <div class="footer-copyright">
+                <p>&copy; <span id="footer-year">2026</span> Pankaj Saini. All Rights Reserved. Designed for College Assignment.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive floating back-to-top button -->
+    <a href="#home" class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to Top of Page">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <!-- Custom Script File Link with cache buster -->
+    <script src="script.js?v=1.4"></script>
+</body>
+</html>
